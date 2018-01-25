@@ -1,7 +1,11 @@
 This example based on https://gist.github.com/deepankarsharma/3494203 
 but contains additional code for old glsl shaders
 and uses actual glfw version with appropriate function calls.
-Also glfw example was used from https://github.com/FlorianRhiem/pyGLFW - look here in glfw/__init__.py if you can't find some variables. 
+Also glfw example was used from https://github.com/FlorianRhiem/pyGLFW - look here in 
+
+glfw/__init__.py 
+
+if you can't find some variables. 
 
 It is the simple example with 2 triangles, that are drawn in quite modern opengl.
 For those like me, who didn't find the better example ;)
