@@ -41,13 +41,13 @@ def getTriangleVAO(program):
     # fill it with values
     glBufferData(GL_ARRAY_BUFFER, vertex_data, GL_STATIC_DRAW)
     # tell, how to interpret it
-    glVertexAttribPointer(program.attrib_location('vin_position'), 3, GL_FLOAT, GL_FALSE, 0, None)
+    glVertexAttribPointer(program.attribLocation('vin_position'), 3, GL_FLOAT, GL_FALSE, 0, None)
     # open the valve, let it to be used.
     glEnableVertexAttribArray(0) # (N.B.!) this indices are in VAO object. In another VAO it will start from 0 again
     # repeat it for colors.
     glBindBuffer(GL_ARRAY_BUFFER, vbo_id[1])
     glBufferData(GL_ARRAY_BUFFER, color_data, GL_STATIC_DRAW)
-    glVertexAttribPointer(program.attrib_location('vin_color'), 3, GL_FLOAT, GL_FALSE, 0, None)
+    glVertexAttribPointer(program.attribLocation('vin_color'), 3, GL_FLOAT, GL_FALSE, 0, None)
     glEnableVertexAttribArray(1)
     # there we unbind current buffer and vertex array object
     glBindBuffer(GL_ARRAY_BUFFER, 0)
@@ -74,13 +74,13 @@ def getTriangleVAO1(program):
     # fill it with values
     glBufferData(GL_ARRAY_BUFFER, vertex_data1, GL_STATIC_DRAW)
     # tell, how to interpret it
-    glVertexAttribPointer(program.attrib_location('vin_position'), 3, GL_FLOAT, GL_FALSE, 0, None)
+    glVertexAttribPointer(program.attribLocation('vin_position'), 3, GL_FLOAT, GL_FALSE, 0, None)
     # open the valve, let it to be used.
     glEnableVertexAttribArray(0)
     # repeat it for colors.
     glBindBuffer(GL_ARRAY_BUFFER, vbo_id[1])
     glBufferData(GL_ARRAY_BUFFER, color_data1, GL_STATIC_DRAW)
-    glVertexAttribPointer(program.attrib_location('vin_color'), 3, GL_FLOAT, GL_FALSE, 0, None)
+    glVertexAttribPointer(program.attribLocation('vin_color'), 3, GL_FLOAT, GL_FALSE, 0, None)
     glEnableVertexAttribArray(1)
     # there we unbind current buffer and vertex array object
     glBindBuffer(GL_ARRAY_BUFFER, 0)

@@ -23,9 +23,9 @@ class ShaderProgram(object):
             print ("Fragment shader file (--> %s <--) doesn't exist!"%self.fragpath)
         if not (fflag and vflag):
             sys.exit(1)
-        self.InitProgram()
+        self.initProgram()
 
-    def GetShader(self, shader_source, shader_type):
+    def getShader(self, shader_source, shader_type):
         try:
             shader_id = glCreateShader(shader_type)
             glShaderSource(shader_id, shader_source)
@@ -44,14 +44,14 @@ class ShaderProgram(object):
         source_file.close()
         return shader_source
 
-    def InitProgram(self):
+    def initProgram(self):
         # create unique shader program id
         self.program_id = glCreateProgram()
         # load and compile individual shaders
         vertsource = self.loadShader(self.vertpath)
         fragsource = self.loadShader(self.fragpath)
-        vert_id = self.GetShader(vertsource, GL_VERTEX_SHADER)
-        frag_id = self.GetShader(fragsource, GL_FRAGMENT_SHADER)
+        vert_id = self.getShader(vertsource, GL_VERTEX_SHADER)
+        frag_id = self.getShader(fragsource, GL_FRAGMENT_SHADER)
         # if it's ok, attach them to shader program
         glAttachShader(self.program_id, vert_id)
         glAttachShader(self.program_id, frag_id)
@@ -71,10 +71,10 @@ class ShaderProgram(object):
         glDeleteShader(vert_id)
         glDeleteShader(frag_id)
 
-    def attrib_location(self, name):
+    def attribLocation(self, name):
         return glGetAttribLocation(self.program_id, name)
 
-    def uniform_location(self, name):
+    def uniformLocation(self, name):
         return glGetUniformLocation(self.program_id, name)
 
 def main():
